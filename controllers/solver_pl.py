@@ -9,7 +9,8 @@ class Resolucionador:
         self.problema=LpProblem("Resolución",self.tipo)
         self.variables=[] #lista de variables de pulp
             
-    def crear_funciones_limitantes(self,coeficientes,variables,operadores,valores):
+    def crear_funciones_restricciones(self,funciones_list_dic):
+        #la función recibe una lista de diccionarios donde cada diccionario representa una ecuación
         pass
 
     def crear_funcion_objetivo(self, coeficientes,variables_pos,operadores):
