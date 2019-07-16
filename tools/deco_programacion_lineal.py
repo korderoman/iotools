@@ -20,10 +20,21 @@ class Deco_PL:
             intermedio.append(aux)
         coeficientes=[i[0] for i in intermedio] #obtenemos los coeficientes
         variables=[i[1] for i in intermedio]#obtenemos el valor de las variables
-        self.resolver.crear_funcion_objetivo()
-        #print(componentes,operadores,coeficientes, variables)
+        self.resolver.crear_funcion_objetivo(coeficientes,variables,operadores)
+        #print(componentes,operadores,coeficientes, variables) //verifica las listas que se están enviando
        
-    def funciones_limite(self,funcion):
+    def funciones_restricciones(self):
+        self.restricciones_cadena=self.restricciones_cadena.split("\n")
+        self.restricciones_cadena=[restriccion for restriccion in self.restricciones_cadena if restriccion]
+        print(self.restricciones_cadena)
+        
+
+    def definir_variables(self):
+        #recibimimos como parámetros una cadena
+        variables_cadena=self.cantidad_variables_cadena.split(",") #la cadena es convertida a una lista de cadenas donde cada elemento se obtiene cuando se encuentra una coma
+        self.resolver.crear_variables(variables_cadena)
+
+    def obtener_una_restriccion(self,funcion):
         componentes=re.split(r"[+,\-,=,<=,>=]",funcion)#obtenemos la lista con los nombres de variables incluidos los espacios en blanco
         componentes=[x for x in componentes if x] #depuramos la lista elminando las cadenas vacias, quedando modelos #X# y en cola un número
         #recordar que en PL no existe el mayor o menor sino siempre es mayor igual que y menor igual que
@@ -46,8 +57,3 @@ class Deco_PL:
         valor=intermedio[(len(intermedio)-1)]
 
         print(intermedio,coeficientes,variables,valor)
-
-    def definir_variables(self):
-        #recibimimos como parámetros una cadena
-        variables_cadena=self.cantidad_variables_cadena.split(",") #la cadena es convertida a una lista de cadenas donde cada elemento se obtiene cuando se encuentra una coma
-        self.resolver.crear_variables(variables_cadena)

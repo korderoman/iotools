@@ -45,3 +45,4 @@ class Programacion_Lineal:
         deco=Deco_PL(self.funcion_x.get(),restricciones,tipo_funcion,self.variable_x.get())
         deco.definir_variables()
         deco.funcion_objetivo()
+        deco.funciones_restricciones()
