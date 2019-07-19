@@ -31,6 +31,7 @@ class Deco_PL:
         restricciones=[self.obtener_una_restriccion(ecuacion_cadena) for ecuacion_cadena in self.restricciones_cadena]
         #print(restricciones) //revisión si las restricciones se encuentran en formato de diccionario
         self.resolver.crear_funciones_restricciones(restricciones)
+    
     def definir_variables(self):
         #recibimos como parámetros una cadena
         variables_cadena=self.cantidad_variables_cadena.split(",") #la cadena es convertida a una lista de cadenas donde cada elemento se obtiene cuando se encuentra una coma
@@ -63,3 +64,6 @@ class Deco_PL:
         #print(intermedio,coeficientes,variables,valor)
         #print(ecuacion)
         return ecuacion
+    
+    def resolver_problema(self):
+        self.resolver.resolver_problema()

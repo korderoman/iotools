@@ -46,3 +46,4 @@ class Programacion_Lineal:
         deco.definir_variables()
         deco.funcion_objetivo()
         deco.funciones_restricciones()
+        deco.resolver_problema()
