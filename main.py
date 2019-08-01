@@ -1,11 +1,14 @@
 from tkinter import *
 from tkinter import ttk
 from views.programacion_lineal import *
+from views.ruta_critica import *
 
 if __name__ == "__main__":
     principal=Tk()
-    principal.geometry("408x390")
+    principal.geometry("816x390")
     principal.resizable(False,False)
-    pl=Programacion_Lineal(principal)
-    principal.title(pl.titulo)
+    rc=Ruta_Crítica(principal)
+    #pl=Programacion_Lineal(principal)
+    #principal.title(pl.titulo)
+    principal.title(rc.titulo)
     principal.mainloop()    
