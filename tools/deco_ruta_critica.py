@@ -2,10 +2,11 @@ from ast import literal_eval as evaluador_string
 from  controllers.solver_rc import *
 
 class Deco_RC:
-    def __init__(self,nodos_cadenas_parametro,arcos_cadenas_parametro):
+    def __init__(self,nodos_cadenas_parametro,arcos_cadenas_parametro,frame_parametro):
         self.nodos_cadenas=nodos_cadenas_parametro
         self.arcos_cadenas=arcos_cadenas_parametro
-        self.problema=Resolucionador(self.decodificar_nodos(self.nodos_cadenas),self.decodificar_arcos(self.arcos_cadenas))
+        self.frame=frame_parametro
+        self.problema=Resolucionador(self.decodificar_nodos(self.nodos_cadenas),self.decodificar_arcos(self.arcos_cadenas),self.frame)
         #self.decodificar_nodos(self.nodos_cadenas)
 
     
