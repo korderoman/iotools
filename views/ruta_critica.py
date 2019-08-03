@@ -3,15 +3,18 @@ from tkinter import ttk
 import tkinter.scrolledtext as tkst
 from tools.deco_ruta_critica import *
 class Ruta_Crítica:
-    def __init__(self,principal):
+    def __init__(self,ventana):
         self.const_margen_x=5
         self.const_margen_y=2
         self.titulo="Resolución de Ruta Crítica"
         self.nodos_cadena_variable="" #una entrada de texto no recibe una variable como las Entry
         self.arcos_cadena_variable=StringVar()
-        self.frame_izquierdo=Frame(principal)
+        #frame principal
+        self.frame_principal=Frame(ventana)
+
+        self.frame_izquierdo=Frame(self.frame_principal)
         self.frame_izquierdo.pack(side="left",fill=Y)
-        self.frame_derecho=Frame(principal)
+        self.frame_derecho=Frame(self.frame_principal)
         self.frame_derecho.pack(side="left",fill=Y)
         self.respuestas=None
         self.implementar_interfaz(self.frame_izquierdo)

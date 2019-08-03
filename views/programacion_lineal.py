@@ -3,13 +3,15 @@ from tkinter import ttk
 from  tools.deco_programacion_lineal import *
 class Programacion_Lineal:
     
-    def __init__(self,principal):
+    def __init__(self,ventana):
         self.variable_x=StringVar() #referencia a la cantidad de variables del problema
-        self.frame_principal=principal
+        self.ventana=ventana
+        self.frame_principal=Frame(ventana)
         self.titulo="Resolución de Programación Lineal"
         self.constante_margen_x=5
         self.funcion_x=StringVar() #referencia a la función objetivo
         self.implementar_interfaz(self.frame_principal)
+        
 
 
     def implementar_interfaz(self,padre):
