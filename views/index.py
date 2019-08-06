@@ -4,6 +4,7 @@ from tkinter import ttk
 from views.programacion_lineal import *
 from views.ruta_critica import *
 from views.ruta_critica import *
+from views.transporte import *
 
 class Index():
     def __init__(self,ventana):
@@ -20,15 +21,17 @@ class Index():
         self.frame_de_pl_continua=Programacion_Lineal(self.ventana)
         #instancia del modulo de la ruta crítica
         self.frame_de_ruta_critica=Ruta_Crítica(self.ventana) 
-        
+        #instancia del módulo de transportes
+        self.frame_de_transportes=Transportes(self.ventana)
          #almacenamos todos los frames
         self.frames=[
                     self.frame_de_inicio,
                     self.frame_de_pl_continua.frame_principal,
-                    self.frame_de_ruta_critica.frame_principal
+                    self.frame_de_ruta_critica.frame_principal,
+                    self.frame_de_transportes.frame_principal
                     ]        
         
-        self.nombres=["Inicio","PL Contínua","Ruta Crítica"]
+        self.nombres=["Inicio","PL Contínua","Ruta Crítica","PL Transporte"]
 
 
     def frame_inicio(self):
